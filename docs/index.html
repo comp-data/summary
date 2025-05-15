@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Computational Thinking: a summary of a 6 CFU course</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+		<link rel="stylesheet" href="css/ctc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/addon.css"></link>
+		<link rel="stylesheet" href="css/font-awesome.min.css"></link>
+		<link rel="stylesheet" href="css/academicons.min.css"></link>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="title" class="title_slide" role="doc-cover">
+					<h1 style="font-size: 50pt;">Computational Thinking: a summary of a 6 CFU course</h1>
+					<div class="author">
+						<p><a href="https://www.unibo.it/sitoweb/silvio.peroni/en">Silvio Peroni</a></p>
+						<p class="contact">
+							<i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:silvio.peroni@unibo.it">silvio.peroni@unibo.it</a>
+							<i class="ai ai-orcid" aria-hidden="true"></i> <a href="https://orcid.org/0000-0003-0530-4305">0000-0003-0530-4305</a>
+						</p>
+						<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"></a> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
+					</div>
+				</section>
+
+				<section>
+					<h2>An experiment</h2>
+					<p class="fr wm"><img src="img/three-glasses.png" /></p>
+					<p>Material:</p>
+					<ul class="fragment">
+						<li><p>3 glasses</p></li>
+						<li><p>4 knives</p></li>
+						<li><p>1 book</p></li>
+					</ul>
+					<p class="fragment">Setting and goal:</p>
+					<ul>
+						<li class="fragment"><p>the glasses as vertexes of a triangle of equal sides</p></li>
+						<li class="fragment"><p>the base of each glass is separated from the other by the lenght of a knife</p></li>
+						<li class="fragment"><p>using the knives, creating a platform on top of the glasses to support the weight of the book</p></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>What does it mean <em>to think</em>?</h2>
+					<p class="fragment">To think (definition, Oxford Dictionary): use one's mind actively to form connected ideas</p>
+					<p class="fragment">Some lesson learnt:</p>
+					<ul class="fragment">
+						<li><p>Leaving out unneeded material</p></li>
+						<li><p>Trial-and-error prodedure may be effective</p></li>
+						<li><p>Recognising similarity of a problem to one already solved makes the problem easier to solve</p></li>
+						<li><p>Use of patterns provided by experience is the most rapid way of solving problems</p></li>
+					</ul>
+					
+				</section>
+
+				<section>
+					<h2>Human-computer communication</h2>
+					<p>Writing a program: communicating to a computer in a (formal) language that such a computer and the <span class="fragment highlight-red">human instructor</span> can both understand</p>
+					<p class="fragment">What we need:</p>
+					<ol class="fragment">
+						<li><p>agree on which language to use for the communication between us and a computer (either human or machine)</p></li>
+						<li class="fragment"><p>think about possible instructions that, if followed systematically by the computer, can enable it to return the expected result to a certain problem</p></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>What are they?</h2>
+					<p class="tc"><img class="hm" src="img/alice-book-it.jpg" /> <img class="hm" src="img/alice-book-en.png" /></p>
+					<p class="fragment st">Two <span class="fragment highlight-red">object</span>s, each <span class="fragment highlight-red">composed by</span> a stack of usually rectangular <span class="fragment highlight-red">pages</span> (346 and 288 respectively) made of paper oriented with one edge fixed together and then bound to the flexible spine of a protective cover of heavier material, <span class="fragment highlight-red">containing a text</span> written by someone (Lewis Carroll) in a natural language (Italian and English respectively)</p>
+				</section>
+				
+				<section>
+					<h2>Abstraction is the key</h2>
+					<p>The process of leaving out of consideration one or more properties of a complex object or situation by extracting common features from specific examples</p>
+					<p class="fragment tc"><img class="hm" src="img/children.png" /> <img class="hm" src="img/post_office.png" /></p>
+				</section>
+				
+				<section>
+					<h2>What is Computational Thinking</h2>
+					<p>An approach for solving problems, designing systems and understanding human behaviour that draws on concepts fundamental to computing</p>
+					<p class="fragment">Reshape the abstractions we have ingested as consequence of our life experiences – that we are unconsciously reusing</p>
+					<p class="fragment">Being again fully conscious of such abstractions, we can use an appropriate language for making them understandable to a computer, in order to automatise them</p>
+					<p class="fragment">Final goal of Computational Thinking: to complement the other thinking strategies one has already learnt in the past with another tool to describe reality</p>
+				</section>
+
+				<section>
+					<h2>Data structures</h2>
+					<p class="fragment">A <em>data structure</em> is a way in which we can <span class="fragment highlight-red">organise</span> the information to process and returned by a computer, so as it can be accessed and modified in an efficient and computational manner</p>
+					<p class="fragment">Broadly speaking, it is a sort of bucket where we can place some information, that provides some methods to add and retrieve pieces of such information</p>
+				</section>				
+				
+				<section>
+					<h2>Order and repeatability</h2>
+					<p>Among the simplest data structures, there are those ones that organise their item in a specific <span class="fragment highlight-red">order</span> and allow the <span class="fragment highlight-red">repeatability</span> of the values they contain</p>
+					<p class="fragment">Order: the sequence in which the items are added to these data structures matters</p>
+					<p class="fragment">Repeatability: the same value can appear twice or more times in the same data structure</p>
+				</section>
+
+				<section>
+					<h2>List, stack and queue</h2>
+					<p>A list is a <span class="fragment highlight-red">countable</span> sequence of <span class="fragment highlight-red">ordered</span> and <span class="fragment highlight-red">repeatable</span> items</p>
+					<p class="fragment">A stack is a is a kind of list seen from a particular perspective, i.e. from <span class="fragment highlight-red">bottom to top</span>, where the items follow a <em class="fragment highlight-red">last in first out</em> strategy (LIFO) for addition and removal</p>
+					<p class="fragment">A queue is a is a kind of list seen from a particular perspective, i.e. from <span class="fragment highlight-red">left to right</span>, where the items follow a <em class="fragment highlight-red">first in first out</em> strategy (FIFO) for addition and removal</p>
+				</section>
+
+				<section>
+					<h2>Stacks and queues</h2>
+					<div class="tc fl mrs">
+						<img class="hsm" src="img/stack.png" />
+						<p class="tc mtn">Stack</p>
+					</div>
+					<div class="tc fr mls">
+						<img class="hsm" src="img/queue.png" />
+						<p class="tc mtn">Queue</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>No order, no repetition</h2>
+					<p class="fragment">A set is a <span class="fragment highlight-red">countable</span> collection of <span class="fragment highlight-red">unordered</span> and <span class="fragment highlight-red">non-repeatable</span> elements</p>
+					<p class="fragment">A dictionary is a countable collection of <span class="fragment highlight-red">unordered</span> <span class="fragment highlight-red">key-value</span> pairs, where the <span class="fragment highlight-red">key is non-repeatable</span> in the dictionary, i.e. the same key cannot be included twice in the dictionary</p>
+				</section>
+
+				<section>
+					<h2>Sets and dictionaries</h2>
+					<div class="tc fl mrs">
+						<img class="hsm" src="img/set.png" />
+						<p class="tc mtn">Set</p>
+					</div>
+					<div class="tc fr mls">
+						<img class="hm" src="img/dictionary.png" />
+						<p class="tc mtn">Dictionary</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Common features</h2>
+					<p>What do recipes and instructions for assembling objects have in common?</p>
+					<p class="tc"><img class="wxl" src="img/recipe-ikea.png" /></p>
+					<p class="fragment">Shared <span class="fragment highlight-red">abstract</span> notion: step-by-step procedure for producing something starting from some initial material we have<span class="fragment"> = algorithm</span></p>
+				</section>
+				
+				<section>
+					<h2>Algorithm</h2>
+					<p>The word <q>algorithm</q> is a combination of the Latin word <em>algorismus</em> (that is the Latinization of the name Al-Khwarizmi, who was a great mathematician from Persia in the 8th century) and the Greek word <em>arithmos</em>, meaning <em>number</em></p>
+					<p class="fragment">Each algorithm is written in a specific <span class="fragment highlight-red">language</span> which is functional to communicate its instruction to a computer</p>
+					<p class="fragment">Computer programmer: anyone that creates algorithms that can be interpreted by any computer</p>
+				</section>
+				
+				<section>
+					<h2>Pseudocode</h2>
+					<p>Pseudocode in an informal language that could be interpreted easily by any computer - even if, usually, it is pretty close to a programming language</p>
+					<p>It is used by computer scientists for sketching an algorithm before to implement it in a particular programming language</p>
+					<p>Checking if an algorithm can be interpretable by a computer: provide a colleague with pseudocode of the algorithm and ask her to execute it using a particular input, writing down all the passages of the execution on a piece of paper</p>
+				</section>
+				
+				<section>
+					<h2>Flowchart</h2>
+                    <p>In this lecture, though, we use a particular graphical alternative to common pseudocode which is good for being understandable by humans: a flowchart</p>
+					<p><em>[Our first algorithm]</em> Consider three different strings as input, i.e. two words and a bibliographic entry of a published paper. The algorithm must return: the number 2 if the bibliographic entry contains both words; the number 1 if the bibliographic entry contains only one word; the number 0 otherwise.</p>
+                    <p class="st fragment">E.g.: input <code>"Berners-Lee"</code>, <code>"web"</code> and <code>"Tim Berners-Lee: Designing the web for an open society. WWW 2011: 3-4"</code><span class="fragment">; output <code>2</code>.</span></p>
+				</section>
+
+                <section>
+                    <h2>Flowchart: flowline</h2>
+                    <p class="tc"><img src="img/flowline.png" /></p>
+                    <p>The arrow is used to define the order in which the operations are executed</p>
+                    <p>The flow indicated by the arrows begin in the starting terminal and ends in the ending terminal</p>
+                </section>
+
+                <section>
+                    <h2>Flowchart: terminal</h2>
+                    <p class="tc"><img src="img/terminal.png" /></p>
+                    <p>It indicates the beginning and ending of an algorithm</p>
+                    <p>It contains a text (usually, either "start" or "end") so as to disambiguate which role has the particular terminal widget in the context of the algorithm</p>
+                </section>
+
+                <section>
+                    <h2>Flowchart: input / output</h2>
+                    <p class="tc"><img src="img/input_output.png" /></p>
+                    <p>It allows one to specify possible input / output material which is used / returned by the algorithm usually at the beginning or end of its execution</p>
+                </section>
+
+                <section>
+                    <h2>Flowchart: decision</h2>
+                    <p class="tc"><img src="img/decision.png" /></p>
+                    <p>It depicts a conditional operation, where a condition is checked and, depending on the value of some of the variables involved in the algorithm, the execution continues in a particular branch instead of another</p>
+                    <p>Usually, the this operation creates two possible alternative branches: one to be followed whether the condition considered is true, and the other in case the condition is false</p>
+                </section>
+
+				<section>
+                    <h2>Flowchart: process</h2>
+                    <p class="tc"><img src="img/process.png" /></p>
+                    <p>It is used for expressing (usually one) instruction or operation, that is executed and that can change the current state of some variables used in the algorithm</p>
+                    <p>The text it includes depicts the instruction to execute</p>
+                </section>
+
+				<section>
+                    <section data-transition="slide-in fade-out">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p class="fragment"><img src="img/final-algorithm-01.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-02.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-03.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-04.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-05.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-06.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-07.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-08.png" /></p>
+                    </section>
+
+                    <section data-transition="fade-in">
+                        <h2>Final algorithm: flowchart</h2>
+                        <p><img src="img/final-algorithm-09.png" /></p>
+                    </section>
+                </section>
+
+				<section>
+					<h2>Python</h2>
+					<p>It is an high-level programming language for general-purpose programming</p>
+					<p>It is currently one of the most used languages for programming in the Web, for Data Science and Natural Language Processing tasks</p>
+					<div class="fragment">
+						<p>Play with Python online:</p>
+						<ul>
+							<li><a href="https://repl.it/">https://repl.it/</a> (you can register via GitHub)</li>
+							<li><a href="http://www.pythontutor.com/">http://www.pythontutor.com/</a> (no registration required)</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Learning by example</h2>
+                    <p><em>[Our first algorithm]</em> Consider three different strings as input, i.e. two words and a bibliographic entry of a published paper. The algorithm must return: the number 2 if the bibliographic entry contains both words; the number 1 if the bibliographic entry contains only one word; the number 0 otherwise.</p>
+				</section>
+				
+				<section>
+					<h2>Defining algorithms: functions</h2>
+					<p class="sst"><code>def &lt;func_name>(&lt;parameter_1>, &lt;parameter_2>, ...)</code></p>
+					<p class="fragment"><code>&lt;func_name></code> and <code>&lt;parameter_i></code> cannot contain spaces and cannot start with a number</p>
+					<div class="fragment">
+						<pre><code>def contains_word(first_word, second_word, bib_entry):
+    ...
+    ...
+    ...</code></pre>
+						<p>All the instructions of the function must be specified in the following lines, as an indented block</p>
+						<p class="fragment">A <em>variable</em> is a symbolic name that contains some information referred to as a value (e.g. <code>first_word</code>, which is a particular kind of variable, called parameter)</p>
+    				</div>
+				</section>
+
+				<section>
+					<h2>What we need</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="1"><p>a mechanism to assigned a value to a certain variable</p></li>
+						<li class="fragment" data-fragment-index="2"><p>a mechanism to return a particular value if a specific condition is true</p></li>
+						<li class="fragment" data-fragment-index="3"><p>a way for checking if the bibliographic entry contains the input word</p></li>
+						<li class="fragment" data-fragment-index="4"><p>a command for returning the result</p></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Variable assignements</h2>
+					<p>It is possible to assign a value (of any kind) to a variable by specifing a variable name followed by the equal sign (<code>=</code>) and then specifying the related value</p>
+					<pre class="fragment"><code>my_number = 15</code></pre>
+					<p class="fragment">The value of a variable can be updated if needed by reassigning a new value to it</p>
+					<pre class="fragment"><code>my_number = my_number + 1</code></pre>
+				</section>
+
+				<section>
+					<h2>Conditional block</h2>
+					<p>It allows one to execute a particular instruction if a condition is true (the <code>if</code> statement), while an alternative set of instructions is executed instead if the condition specified is false (the <code>else</code> statement, which is optional)</p>
+					<pre><code>if &lt;condition>:
+    ...
+    ...
+else:
+    ...
+    ...</code></pre>
+				</section>
+
+				<section>
+					<h2>Specify the condition</h2>
+					<p>The command <code>in</code> is used to check if a certain string is contained in another one</p>
+					<p><code>&lt;string1> in &lt;string2></code> would be true if the value &lt;string1> is contained in &lt;string2></p>
+					<p class="fragment">A <em>string</em> is a particular type of value that contains a sequence of characters, and it is usually defined by using the quotes – e.g. <code>"Berners-Lee"</code></p>
+				</section>
+
+				<section>
+					<h2>Return statement</h2>
+					<p><code>return &lt;value_to_return></code></p>
+					<p>The execution of a return statement finishes the execution of a function, and all the instructions that follow that statement are not processed anymore</p>
+					<p class="fragment">E.g.: <code>return 1</code></p>
+					<p class="fragment">A <em>number</em> is defined by writing it down as it is – e.g. 42 and -42 for positive/negative integers, 1.625 and -1.625 for positive/negative decimals</p>
+					<p class="fragment"><code>"42"</code> is different from <code>42</code></p>
+				</section>
+
+				<section>
+					<h2>Final algorithm</h2>
+					<pre><code>def contains_word(first_word, second_word, bib_entry):
+    result_value = 0 
+
+    if first_word in bib_entry:
+        result_value = result_value + 1
+	
+    if second_word in bib_entry:
+        result_value = result_value + 1
+
+    return result_value
+    </code></pre>
+				</section>
+
+				<section>
+					<h2>Executions of code</h2>
+					<pre><code class="python">def contains_word(first_word, second_word, bib_entry):
+    ...
+
+result = contains_word("Berners-Lee", "web" and "Tim Berners-Lee: Designing the web for an open society. WWW 2011: 3-4")
+print(result)</code></pre>
+					<pre class="fragment">2</pre>
+					<p class="fragment"><code>print(&lt;object_1>, &lt;object_2>, ...)</code> allows one to print on screen one or more values (that can be referred by a variable)</p>
+				</section>
+
+				<section>
+					<h2>Python classes</h2>
+                    <p><strong>Class:</strong> extensible template for creating objects having a certain type (e.g. the class for strings, for integers, for lists)</p>
+                    <p class="fragment"><strong>Object:</strong> a value of a certain kind (e.g. <code>"a string"</code>, <code>42</code>, <code>list([1,2,3])</code>)</p>
+                    <p class="fragment"><strong>Method:</strong> a function that can be run only if directly called via an object (e.g. <code>&lt;list>.append(&lt;item>)</code>)</p>
+				</section>
+
+				<section>
+					<h2>List: Python methods</h2>
+					<p>Create a new list: <code>list()</code></p>
+					<p class="fragment">Add new item: <code>&lt;list>.append(&lt;item>)</code></p>
+					<p class="fragment">Remove item: <code>&lt;list>.remove(&lt;item>)</code></p>
+					<p class="fragment">Add items from another list: <code>&lt;list>.extend(&lt;another_list>)</code></p>
+				</section>
+				
+				<section>
+					<h2>Use methods on list</h2>
+					<pre><span class="fragment" data-fragment-index="1">my_first_list = list()</span>
+<span class="fragment" data-fragment-index="2">my_first_list.append(34)</span>
+<span class="fragment" data-fragment-index="3">my_first_list.append(15)</span>
+<span class="fragment" data-fragment-index="4">my_first_list.append("Silvio")</span>
+<span class="fragment" data-fragment-index="5">my_first_list.remove(34)</span>
+<span class="fragment" data-fragment-index="6">my_first_list.extend(my_first_list)</span></pre>
+					<p>
+						<code class="fragment" data-fragment-index="1">my_first_list = </code>
+						<span class="fragment fade-out" data-fragment-index="5"><span class="cell fragment" data-fragment-index="2">34</span></span>
+						<span class="cell fragment" data-fragment-index="3">15</span>
+						<span class="cell fragment" data-fragment-index="4">"Silvio"</span>
+						<span class="cell fragment" data-fragment-index="6">15</span>
+						<span class="cell fragment" data-fragment-index="6">"Silvio"</span>
+					</p>
+				</section>
+
+				<section>
+					<h2>Dictionary: Python methods</h2>
+					<p>Create a new dictionary: <code>dict()</code></p>
+					<p class="fragment">Add new pair: <code>&lt;dictionary>[&lt;key>] = &lt;value></code></p>
+					<p class="fragment">Remove a pair: <code>del &lt;dictionary>[&lt;key>]</code></p>
+					<p class="fragment">Get value by key: <code>&lt;dictionary>.get(&lt;key>)</code></p>
+					<p class="fragment">Add pairs from another dictionary: <code>&lt;dictionary>.update(&lt;another_dictionary>)</code></p>
+				</section>
+				
+				<section>
+					<h2>Use methods on dictionary</h2>
+					<pre><span class="fragment" data-fragment-index="1">my_first_dict = dict()</span>
+<span class="fragment" data-fragment-index="2">my_first_dict["age"] = 34</span>
+<span class="fragment" data-fragment-index="3">my_first_dict["day of birth"] = 15</span>
+<span class="fragment" data-fragment-index="4">my_first_dict["name"] = "Silvio"</span>
+<span class="fragment" data-fragment-index="5">del my_first_dict["age"]</span>
+<span class="fragment" data-fragment-index="6">my_first_dict.update(my_first_dict)</span>
+<span class="fragment" data-fragment-index="7">my_first_dict.get("name")</span>
+</pre>
+					<div>
+						<p class="fl"><code class="fragment" data-fragment-index="1">my_first_dict =</code></p>
+						<div style="margin-left:37%">
+							<div><span class="cell fragment" data-fragment-index="4">"name": <span class="fragment highlight-red" data-fragment-index="7">"Silvio"</span></span></div>
+							<div><span class="cell fragment" data-fragment-index="3">"day of birth": 15</span></div>
+							<div><span class="fragment fade-out" data-fragment-index="5"><span class="cell fragment" data-fragment-index="2">"age": 34</span></span></div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Iteration</h2>
+					<p>The usual way for accessing items in data structures, e.g. lists,  is to <span class="fragment highlight-red">iterate</span> over a certain input or a block of instructions several times</p>
+					<div class="fragment">
+						<p class="mbs">Foreach loop</p>
+						<pre class="mtn"><code class="python">for item in &lt;collection>:
+    # do something using the current item</code></pre>
+					</div>
+					<div class="fragment">
+						<p class="mbs">Example</p>
+						<pre><code>for item in my_first_list:
+    print("Item:", item)</code></pre>
+					</div>
+    				<div>
+						<pre class="fragment">Item: 15</pre>
+						<pre class="fragment">Item: Silvio</pre>
+						<pre class="fragment">Item: 15</pre>
+						<pre class="fragment">Item: Silvio</pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>A list of dictionary</h2>
+					<p>Create a function to create a list of dictionaries with the values included in the input list</p>
+					<pre class="fragment"><code>def list_of_dict(my_list):
+    r = list()
+    i = 0
+
+    for item in my_list:
+        i = i + 1
+        my_dict = dict()
+        my_dict["item"] = item
+        my_dict["index"] = i
+        r.append(my_dict)
+    
+    return r</code></pre>
+				</section>
+
+				<section>
+					<h2>Python packages</h2>
+					<p>Module: a Python file (e.g. <code>extension.py</code>) that contains the definition of variables, functions, and even runnable code</p>
+					<p class="fragment">Package: a mechanism to expose one or more Python modules, functions, variables</p>
+                    <pre class="fragment"><code class="python">from &lt;package> import &lt;module or function or variable></code></pre>
+                    <div class="fragment">
+                        <p>Example:</p>
+                        <pre><code class="python">from pprint import pprint</code></pre>
+                    </div>
+				</section>
+
+				<section>
+					<h2>Running the code</h2>
+					<pre><code>from pprint import pprint
+
+def list_of_dict(my_list):
+    ...
+
+list_of_dict = list_of_dict(my_first_list)
+    
+pprint(list_of_dict)</code></pre>
+					<pre class="fragment">[
+    {'index': 1, 'item': 15},
+    {'index': 2, 'item': 'Silvio'},
+    {'index': 3, 'item': 15},
+    {'index': 4, 'item': 'Silvio'}
+]</pre>
+				</section>
+
+				<section>
+					<h2>Opening descriptors to files</h2>
+					<p>The function <code>open</code> takes in input several parameters and returns a file object, i.e. a Python object used to interact with a file stored in the file system</p>
+					<p class="fragment">It takes in input at least three paramenters</p>
+					<ul>
+						<li class="fragment">the first positional parameter must contain the path of the file one wants to open</li>
+						<li class="fragment">the second positional parameter is the mode used to open the file (<code>"r"</code> stands for read, <code>"w"</code> for write, etc.)</li>
+						<li class="fragment">the named parameter encoding specifying the encoding to open the file (<code>"utf-8"</code> must be used, if you do not want to have issues)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Storing data in JSON</h2>
+					<p>JSON is a simple textual format to describe objects which follow the key-value approach to specify data, similar to Python dictionaries, and it is handled in Python with the package <code>json</code></p>
+					<p>The keyword <code>with</code> used with the function <code>open</code> allows one to handle the opening and closing of the file object automatically, defined by the variable <code>f</code> in the example below</p>
+					<pre><code>from json import dump
+
+with open("my_file.json", "w", encoding="utf-8") as f:
+    dump(list_of_dict, f)</code></pre>
+				</section>
+
+				<section>
+					<h2>Additional material</h2>
+					<p>Peroni, S. (2020). Computational Thinking and Programming book. <a href="https://comp-think.github.io">https://comp-think.github.io</a></p>
+					<p>Tagliaferri, L. (2018). How To Code in Python. ISBN: 978-0999773017. <a href="https://www.digitalocean.com/community/books/digitalocean-ebook-how-to-code-in-python">https://www.digitalocean.com/community/books/digitalocean-ebook-how-to-code-in-python</a></p>
+					<p>Peroni, S. (2025). Data Science course. <a href="https://github.com/comp-data/2024-2025">https://github.com/comp-data/2024-2025</a></p>
+				</section>
+
+				<section class="title_slide">
+					<h2>
+						END
+						<span class="subtitle">Computational Thinking: a summary of a 6 CFU course</span>
+					</h2>
+					<div class="author">
+						<p><a href="https://www.unibo.it/sitoweb/silvio.peroni/en">Silvio Peroni</a></p>
+						<p class="contact">
+							<i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:silvio.peroni@unibo.it">silvio.peroni@unibo.it</a>
+							<i class="ai ai-orcid" aria-hidden="true"></i> <a href="https://orcid.org/0000-0003-0530-4305">0000-0003-0530-4305</a>
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
