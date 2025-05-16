@@ -444,7 +444,7 @@ else:
 					<pre><code class="python">def contains_word(first_word, second_word, bib_entry):
     ...
 
-result = contains_word("Berners-Lee", "web" and "Tim Berners-Lee: Designing the web for an open society. WWW 2011: 3-4")
+result = contains_word("Berners-Lee", "web", "Tim Berners-Lee: Designing the web for an open society. WWW 2011: 3-4")
 print(result)</code></pre>
 					<pre class="fragment">2</pre>
 					<p class="fragment"><code>print(&lt;object_1>, &lt;object_2>, ...)</code> allows one to print on screen one or more values (that can be referred by a variable)</p>
@@ -517,13 +517,13 @@ print(result)</code></pre>
 					<p>The usual way for accessing items in data structures, e.g. lists,  is to <span class="fragment highlight-red">iterate</span> over a certain input or a block of instructions several times</p>
 					<div class="fragment">
 						<p class="mbs">Foreach loop</p>
-						<pre class="mtn"><code class="python">for item in &lt;collection>:
+						<pre class="mtn"><code class="python">for cur_item in &lt;collection>:
     # do something using the current item</code></pre>
 					</div>
 					<div class="fragment">
 						<p class="mbs">Example</p>
-						<pre><code>for item in my_first_list:
-    print("Item:", item)</code></pre>
+						<pre><code>for cur_item in my_first_list:
+    print("Item:", cur_item)</code></pre>
 					</div>
     				<div>
 						<pre class="fragment">Item: 15</pre>
@@ -536,14 +536,14 @@ print(result)</code></pre>
 				<section>
 					<h2>A list of dictionaries</h2>
 					<p>Create a function to create a list of dictionaries with the values included in the input list</p>
-					<pre class="fragment"><code>def list_of_dict(my_list):
+					<pre class="fragment"><code class="python">def list_of_dict(my_list):
     r = list()
     i = 0
 
-    for item in my_list:
+    for cur_item in my_list:
         i = i + 1
         my_dict = dict()
-        my_dict["item"] = item
+        my_dict["item"] = cur_item
         my_dict["index"] = i
         r.append(my_dict)
     
@@ -563,14 +563,14 @@ print(result)</code></pre>
 
 				<section>
 					<h2>Running the code</h2>
-					<pre><code>from pprint import pprint
+					<pre><code class="python">from pprint import pprint
 
 def list_of_dict(my_list):
     ...
 
-list_of_dict = list_of_dict(my_first_list)
+my_ld = list_of_dict(my_first_list)
     
-pprint(list_of_dict)</code></pre>
+pprint(my_ld)</code></pre>
 					<pre class="fragment">[
     {'index': 1, 'item': 15},
     {'index': 2, 'item': 'Silvio'},
@@ -594,10 +594,10 @@ pprint(list_of_dict)</code></pre>
 					<h2>Storing data in JSON</h2>
 					<p>JSON is a simple textual format to describe objects which follow the key-value approach to specify data, similar to Python dictionaries, and it is handled in Python with the package <code>json</code></p>
 					<p>The keyword <code>with</code> used with the function <code>open</code> allows one to handle the opening and closing of the file object automatically, defined by the variable <code>f</code> in the example below</p>
-					<pre><code>from json import dump
+					<pre><code class="python">from json import dump
 
 with open("my_file.json", "w", encoding="utf-8") as f:
-    dump(list_of_dict, f)</code></pre>
+    dump(my_ld, f)</code></pre>
 				</section>
 
 				<section>
